@@ -9,6 +9,7 @@
 *Once the number is half of the input value, print "HALF!"
 */
 
+/*
 int input = 21;
 
 for (int i = 0; i < input; i++){
@@ -20,7 +21,6 @@ for (int i = 0; i < input; i++){
     println(i);
   }
 }
-
 */
 
 //7.b
