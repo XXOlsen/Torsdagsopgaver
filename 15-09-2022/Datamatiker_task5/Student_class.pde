@@ -5,7 +5,6 @@
  */
 
 
-
 class Student {
 
   String name;

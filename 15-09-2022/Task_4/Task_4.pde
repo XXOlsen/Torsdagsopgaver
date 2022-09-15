@@ -1,4 +1,3 @@
-
 /*
 4.a Create arrays of the following type and assign it at least 3 different values:
  
@@ -6,7 +5,7 @@
  String array
  boolean array
  */
-
+ 
 int age[] = {12, 31, 2};
 
 String[] things = {"Cat", "Dog", "Horse"};

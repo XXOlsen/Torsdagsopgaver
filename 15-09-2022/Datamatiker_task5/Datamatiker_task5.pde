@@ -1,5 +1,3 @@
-
-
 /*
 3.i Returning to the Datamatik class add a setup() function
  and in this function, create a new object/instance of the type

@@ -3,7 +3,7 @@
  and add 4 global variables: "name", "age", "isFemale",
  "datamatikerTeam" using appropriate data types for each.
  */
-
+ 
 class Student {
 
   String name;

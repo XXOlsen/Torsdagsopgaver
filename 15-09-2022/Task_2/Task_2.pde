@@ -1,7 +1,6 @@
 
 //2.a Look at the file TaskTwoA and fill out the missing line, using the happy boolean.
 
-
 boolean happy = true;
 
 void setup() {

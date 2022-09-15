@@ -4,8 +4,6 @@
  * Fix programmet så det kan køre og
  * outputtet bliver:
  * "7 is the smallest!"
- *
- *
  */
 
 void setup() {

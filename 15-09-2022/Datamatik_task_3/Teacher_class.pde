@@ -1,5 +1,4 @@
 /*
-
  3.f in the Teacher tab, declare the class "Teacher"
  and add 3 global variables: "name", "age", "isFemale",
  using appropriate data types for each.

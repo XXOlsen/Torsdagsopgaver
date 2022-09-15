@@ -1,6 +1,6 @@
 /*
 1.a Create a sketch and name it Task1. Write a void setup()-function in the sketch.
- 
+
  1.b Write a function that prints an empty line and call it from setup();
  
  1.c Write a function that receives a string as a parameter and prints it.
