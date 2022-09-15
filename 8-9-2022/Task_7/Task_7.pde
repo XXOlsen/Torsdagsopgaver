@@ -2,13 +2,13 @@
 
 //7.a
 /*
-int input = 21;
+int input = 20;
 
-for (int i = 0; i < input; i++){
+for (int i = 0; i <= input; i++){
   if (i == 6) {
     println("six");
-  } else if (i == 10){
-    println("half");
+  } else if (i == 10){ //else if (i == input/2)
+    println("HALF!: " + i);
   } else {
     println(i);
   }
@@ -18,13 +18,13 @@ for (int i = 0; i < input; i++){
 
 //7.b
 
-int input = 61;
+int input = -20;
 
-for (int i = 0; i < input; i++){
+for (int i = input; i <= 0; i++){
   if (i == 6) {
     println("six");
   } else if (i == input/2){
-    println("half");
+    println("HALF!: " + i);
   } else {
     println(i);
   }

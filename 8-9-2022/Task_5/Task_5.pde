@@ -7,26 +7,28 @@
 //5.b solve the problem presented in MethodTwo.
 
 void setup() {
-  MethodOne(); 
-  MethodTwo(); 
+  methodOne(); //i den orginale opgave skrives den med stor M.
+  methodTwo(); //dette skal rettes til småt m. 
 }
 
 /*
   The following method has an error in it. Fix the error and run it. 
 */
 
-void MethodOne()
+void methodOne() //ændres små m!
 {
   int i = 1000; // You are not allowed to change this line. 
+  
+  String output = "";
   
   int max = 10;
   
   if (i > max)
   {
-    String output = i + " is greater than "+max+"."; 
-    println(output);
+    output = i + " is greater than "+max+"."; 
+   
   }
-
+  println(output);
 }
 
 /* 
@@ -34,9 +36,9 @@ void MethodOne()
   to the weekday and it prints the correct output.  
 */
 
-void MethodTwo() 
+void methodTwo() 
 {
-  int weekDay = 0; // 0 = Monday, 6 = Sunday. 
+  int weekDay = (int)random(0,6); // 0 = Monday, 6 = Sunday. 
   boolean weekend = false;
   
   if (weekDay < 5)

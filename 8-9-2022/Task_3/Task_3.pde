@@ -21,35 +21,47 @@ void draw(){
   fill(0);
   rect(300,300,150,400);
   stroke(0);
+  fill(175);
+  ellipse(300,170,100,100);
+  ellipse(300,430,100,100);
+  ellipse(300,300,100,100);
   
   if (lys == 1){
     fill(#FF0000); //rød
     ellipse(300,170,100,100);
+    /*
     fill(175);
     ellipse(300,430,100,100);
     ellipse(300,300,100,100);
+    */
   }
   else if (lys == 2) {
     fill(#F6FF00);
     ellipse(300,300,100,100);
+    /*
     fill(175);
     ellipse(300,170,100,100);
     ellipse(300,430,100,100);
+    */
   } 
    else if (lys == 3) {
     fill(#00FF0E);//grøn
     ellipse(300,430,100,100);
+    /*
     fill(175);
     ellipse(300,300,100,100);
     ellipse(300,170,100,100);
+    */
     
   } 
   else {
     fill(#F6FF00);
     ellipse(300,300,100,100);
+    /*
     fill(175);
     ellipse(300,170,100,100);
     ellipse(300,430,100,100);
+    */
     lys = 0;
   }
   
