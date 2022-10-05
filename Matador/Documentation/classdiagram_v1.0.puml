@@ -1,0 +1,45 @@
+@startuml
+!pragma layout smetana
+class Game
+class Player
+
+Game : - File fileIO;
+Game : - TextUI textUI;
+Game : - ArrayList<Player> players
+Game : + void gameSetup()
+Game : - void createPlayers(ArrayList<String> data)
+
+Player *-- BankAccount
+Main *-- Game : has-a
+Game *-- FileIO : has-a
+Game *-- TextUI : has-a
+Game *-- "2..6" Player: has-a
+
+
+Main : - static Game
+Main : + static void Main()
+
+FileIO : + readGameData;
+
+TextUI : - Scanner scan
+TextUI : + String getUserInput(String msg)
+TextUI : + int getUserInput(String msg, ArrayList<String> options
+TextUI : + ArrayList<String> getUserInput (String msg), iterations
+
+Player : - String name
+Player : - int amount
+Player : + String getName()
+Player : + Player (String name, int amount)
+Player : + void setName(String name)
+Player : + int getAmount()
+Player : + int setAmount()
+Player : + String toString()
+Player : + void buy()
+
+BankAccount : - int balance
+BankAccount : + BankAccount(int startAmount)
+BankAccount : + void doTransaction(int amount)
+BankAccount : + int getBalance()
+BankAccount : + toString()
+
+@enduml

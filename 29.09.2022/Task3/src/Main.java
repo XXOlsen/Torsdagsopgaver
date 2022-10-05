@@ -10,31 +10,30 @@ public class Main {
         // pick a random number
         Random random = new Random();
         rnd_number = random.nextInt(100) + 1;
-        System.out.println( "I'm thinking of a number between 1 and 100 (including both).");
-        System.out.println( "Can you guess what it is?...");
+        System.out.println("I'm thinking of a number between 1 and 100 (including both).");
+        System.out.println("Can you guess what it is?...");
         makeAGuess();
     }
 
 
-    private static void makeAGuess(){
+    private static void makeAGuess() {
         // Create a Scanner object
-        Scanner scan = new Scanner (System.in);
+        Scanner scan = new Scanner(System.in);
         // Read user input
         int input = scan.nextInt();
 
         // if so...
-        if(scan.hasNextInt()){ //use hasNextInt to check if input is numeric
-            if(input == rnd_number) {  //   Compare it with the random number
-                //   Let the user know the result of the comparison (was it the right number?)
-                System.out.println("You guessed it right, the number was: " + input);
-            } else if (input > rnd_number) {
-                System.out.println("You guessed wrong, your number is too high");
-                makeAGuess();
-            } else if (input < rnd_number){
-                System.out.println("You guessed wrong, your number is too low");
-                makeAGuess();
-            }
+        if (input == rnd_number) {  //   Compare it with the random number
+            //   Let the user know the result of the comparison (was it the right number?)
+            System.out.println("You guessed it right, the number was: " + input);
+        } else if (input > rnd_number) {
+            System.out.println("You guessed wrong, your number is too high");
+            makeAGuess();
+        } else if (input < rnd_number) {
+            System.out.println("You guessed wrong, your number is too low");
+            makeAGuess();
         }
+
 
         //   If it was NOT the right number, let the user try again by calling this method recursively
         //   (If you are not sure how to do recursion, you can use a loop instead)
