@@ -7,6 +7,7 @@ public class Game {
     private ArrayList<Player> players = new ArrayList();
 
 
+
     public void gameSetup() {
         //**********************
         // Load af spiller data
@@ -16,8 +17,13 @@ public class Game {
             data = textUI.getUserInput("Skriv spillernavn. Tast Q for at quitte", 6);
         }
         this.createPlayers(data);
-        players.get(0).buy(4000);
-        fileIO.writeGameData(players);
+        //players.get(0).buy(4000);
+        //FileIO.writeGameData(players);
+
+        //**********************
+        // Load af spiller data
+        // **********************
+
     }
 
     private void createPlayers(ArrayList<String> data) {
