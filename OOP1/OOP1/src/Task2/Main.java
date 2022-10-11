@@ -1,6 +1,7 @@
 package Task2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +15,7 @@ public class Main {
         // used for the "Rooms" field in your Building.java class).
 
         ArrayList<Room> rooms = new ArrayList<>();
+        //ArrayList<Room> rooms = Arrays
 
         rooms.add(room1);
         rooms.add(room2);
@@ -22,28 +24,40 @@ public class Main {
 
         //2.I In your main method, instantiate a new building.
 
-        Building building = new Building(rooms, 2, 3, 1);
+        Building b = new Building(rooms, 2, 3, true);
 
-        System.out.println(countLampsInBuilding(building));
-        System.out.println(isNormal(building));
+        System.out.println("Lamps in this building is: " + countLampsInBuilding(b));
+        System.out.println("Number of lamps in building is: " + isNormal(b));
     }
 
     //2.J create a static method in Main, countLampsInBuilding,
     // that takes an object of type Building, and returns the total number of lamps in the entire building.
-    public static int countLampsInBuilding(Building r) {
+    public static int countLampsInBuilding(Building building){
         int count = 0;
-        for (int i = 0; i < r.getRooms().size(); i++) { //fordi det er ArrayList, dermed .size()
-            count += r.getRooms().get(i).getnumberOfLamps();
+        for (int i = 0; i < building.getRooms().size(); i++) { //fordi det er ArrayList, dermed .size()
+            count += building.getRooms().get(i).getnumberOfLamps();
         }
         return count;
+
+        //en anden måde, ved brug af for each metoden:
+        /*
+        int result = 0;
+        for (Room building : building.getRooms()){
+        result += building.getnumberOfLamps();
+        }
+        return result;
+        */
     }
 
-     //2.K create another static method in Main, isNormal, that takes an object of type Building.
-     // The method should return true if the Building's numberOfFloors is greater than its number of Rooms.
-     // If not it should print "This is an odd building" and return false.
+    //2.K create another static method in Main, isNormal, that takes an object of type Building.
+    // The method should return true if the number of Rooms is greater than the Building's numberOfFloors.
+    // If not it should print "This is an odd building" and return false.
 
-    public static boolean isNormal(Building r){
-        if(r.getNumberOfFloors() > r.getRooms().size()){
+    public static boolean isNormal(Building building) {
+        int floors = building.getNumberOfFloors();
+        int rooms = building.getRooms().size();
+
+        if (floors <= rooms) {
             return true;
         } else {
             System.out.println("This is an odd building.");

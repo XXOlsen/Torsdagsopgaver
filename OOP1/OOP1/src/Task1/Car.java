@@ -6,7 +6,7 @@ public class Car {
     private String model;
     private int year;
     private String bodyStyle;
-    private Driver driver;
+    private Driver driver; //fordi det er et objekt, ligesom player
 
     //1.D Create a constructor, that populates all the fields above, except the Driver.
     public Car(String make, String model, int year, String bodyStyle) {

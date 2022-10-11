@@ -9,6 +9,9 @@ public class Main {
         //1.I In the main method, instantiate a new car, populating the field with whatever values you see fit.
         Car cars = new Car("Hyundai", "Type827", 1967, "auto giant");
 
+        //så har vi ikke driver med.
+        //cars.setDriver(null);
+
         //1.J In the main method, assign the driver to the car created, using the setter method created in step 1.E
         cars.setDriver(driver);
 

@@ -11,7 +11,7 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String userName;
-    int id;
+    private int id;
 
     //3.B Klassen skal have en konstruktor der tager et parameter med kundens navn og brugernavn.
     //Giv klassen en toString() metode, der printer kundens detaljer pænt ud.
@@ -23,9 +23,18 @@ public class Customer {
         this.userName = userName;
     }
 
+    //Man kan også lave det på denne her måde:
+    /*
+    public Customer(String fullname, String userName) {
+        String[] names = fullname.split(" ");
+        firstName = names(0);
+        lastName = names[1];
+        this.userName = userName;
+    }
+    */
     @Override
     public String toString() {
-        return "Customers information: " + firstName + " "+  lastName + ", and username: " + userName;
+        return "Customers information: " + firstName + " " + lastName + ", and username: " + userName;
     }
 
     public String getFirstName() {

@@ -2,31 +2,81 @@
 import java.util.ArrayList;
 
 public class Game {
-    private FileIO fileIO = new FileIO();
+    public FileIO fileIO = new FileIO();
     private TextUI textUI = new TextUI();
     private ArrayList<Player> players = new ArrayList();
-
-
-
+    private Board board;
+    private Player currentPlayer;
     public void gameSetup() {
         //**********************
         // Load af spiller data
         // **********************
-        ArrayList<String> data = fileIO.readGameData();
-        if (data == null) {
-            data = textUI.getUserInput("Skriv spillernavn. Tast Q for at quitte", 6);
+        ArrayList<String> data =  fileIO.readGameData();
+        if(data == null){
+            data = textUI.getUserInput("Skriv spillernavn. Tast Q for at quitte",6);
         }
         this.createPlayers(data);
-        //players.get(0).buy(4000);
-        //FileIO.writeGameData(players);
-
         //**********************
-        // Load af spiller data
+        // Load af felt data og bygge boardet
         // **********************
+        String[] fieldData = fileIO.readBoardData();
+        board = new Board(fieldData);
+
+
+        runGame();
 
     }
 
-    private void createPlayers(ArrayList<String> data) {
+    public void saveGame(){
+        FileIO.writeGameData(players);
+    }
+    /* TODO: Increase modularity for readability in this class by...
+        1. moving the code that rolls the dice and moves the player to a method called throwAndMove()
+        2. moving the code that calls the onLand method to a method called landAndAct()
+        3. limit the code in runGame to run a game loop, where..
+        3.a the next player is found
+        3.b the user is prompted to either continue or quit the game
+    *
+    * */
+    private void runGame(){
+
+        String input = "";
+
+        int count = 0;
+
+        while(!input.equalsIgnoreCase("q")) {
+
+            currentPlayer = players.get(count);
+            count++;
+            throwAndMove();
+            input = textUI.getUserInput("Fortsætte(C) eller Afslutte (Q) ?");
+            if(count == players.size()){
+                count = 0;
+            }
+        }
+
+    }
+    private void throwAndMove(){
+
+        System.out.println("Det er "+currentPlayer.getName()+"'s tur. \n"+currentPlayer.getName()+ "står på felt "+currentPlayer.getPosition() );
+
+        int result = 1; //Dice.rollDiceSum();
+        int newPos = currentPlayer.updatePos(result);
+        //System.out.println("Current player NEW position: "+currentPlayer.getPosition());
+        Field f = board.getField(newPos);
+        landAndAct(f);
+    }
+
+    private void landAndAct(Field f){
+
+        String optionMsg = f.onLand(currentPlayer);
+        String choice = textUI.getUserInput(optionMsg);
+        String msg = f.processChoice(choice, currentPlayer);
+        textUI.displayMessage(msg);
+    }
+
+
+    private void createPlayers(ArrayList<String> data){
         for (String s : data) {
             String[] values = s.replaceAll(" ","").split(","); //split arrayet så vi får adskildt de to værdier
             int balance;
@@ -41,12 +91,11 @@ public class Game {
             players.add(p);                            // tilføj Player instansen til array'et af spillere
 
         }
-        //Det her er kun til test
-        //players.get(0).buy(7000);
+
     }
 
     public void displayPlayers() {
-        for (Player p : players) {
+        for (Player p:players) {
             System.out.println(p);
         }
     }

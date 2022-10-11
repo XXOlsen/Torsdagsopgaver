@@ -2,20 +2,16 @@
 'https://plantuml.com/object-diagram
 !pragma layout smetana
 
-object Car
-object Driver
-object Main
+class Car
+class Driver
 
-Main *-- Driver
-Main *-- Car
-
-Main : + static void Main
+Car *-- "0..1" Driver
 
 Car : - String make
 Car : - String model
 Car : - int year
 Car : - String bodyStyle
-Car : - Driver
+Car : - Driver driver
 
 Car : + Car(String, String, int, String)
 Car : + Driver(String, int)
@@ -27,7 +23,11 @@ Driver : - String name
 Driver : - int age
 
 Driver : + Driver(String name, int age)
-Driver : + toString()
+Driver : + String getName()
+Driver : + void setName(String name)
+Driver : + int getAge()
+Driver : + void setAge(int age)
+Driver : + String toString()
 
 
 

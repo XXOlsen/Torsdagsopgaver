@@ -1,21 +1,22 @@
 public class BankAccount {
     private int balance;
 
-    public BankAccount(int startAmount) {
-        balance = startAmount;
-    }
 
+    public BankAccount(int startAmount){
+        balance = startAmount;
+
+    }
     //change balance, set balance
-    public void doTransaction(int amount) {
+    public void doTransaction(int amount){
         balance += amount;
     }
 
-    public int getBalance(){
+    public int getBalance() {
         return balance;
     }
 
     @Override
     public String toString() {
-        return "" + balance;
+        return ""+balance;
     }
 }

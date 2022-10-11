@@ -1,53 +1,63 @@
 @startuml
 'https://plantuml.com/object-diagram
-!pragma layout smetana
 
 object Game
 object Player
 object BankAccount
 object Die
 object Card
+object Bank
 
 object Piece
 object Board
-
 object Field
+object Property
 object Prison
 object Tax
 object Parking
 object Start
 object Chance
-object Property
 object ShippingLine
-object Brewery
-
 object Building
 object Deed
+object Brewery
+
 
 Game *-- Board
 Game *-- "2..6" Player
 Game *-- Card
 Board *-- Piece
 Player *-- Piece
+Player *-- Deed
 Player *-- BankAccount
 Board *-- "2" Die
-
-Board *-- "48" Field : has-a
-Field <|-- Start : is-a
+Board *-- "40" Field : has-a
+Field <|-- Start : is - a
 Field <|-- Property
 Property <|-- Business
 Property <|-- Plot
+Property <|-- Deed
 Plot *-- Building
-Property *-- Deed
-Player *-- Deed
 Business <|-- ShippingLine
 Business <|-- Brewery
+
 
 
 Field <|-- Chance
 Field <|-- Parking
 Field <|-- Tax
 Field <|-- Prison
+
+
+
+
+
+
+
+
+
+
+
 
 
 @enduml

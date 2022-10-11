@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/object-diagram
+!pragma layout smetana
+
+object room1
+object room2
+object room3
+object room4
+object buiding
+
+buiding *-- room1
+building *-- room2
+building *-- room3
+building *-- room4
+
+
+@enduml

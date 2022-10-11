@@ -15,10 +15,10 @@ public class Building {
     private final ArrayList<Room> rooms;
     private int numberOfBathrooms;
     private int numberOfFloors;
-    private int isOfficeBuilding;
+    private boolean  isOfficeBuilding;
 
     //2.E Create a constructor that populates all the fields above.
-    public Building(ArrayList<Room> rooms, int numberOfBathrooms, int numberOfFloors, int isOfficeBuilding) {
+    public Building(ArrayList<Room> rooms, int numberOfBathrooms, int numberOfFloors, boolean isOfficeBuilding) {
         this.rooms = rooms;
         this.numberOfBathrooms = numberOfBathrooms;
         this.numberOfFloors = numberOfFloors;
@@ -42,7 +42,7 @@ public class Building {
         return numberOfFloors;
     }
 
-    public int getIsOfficeBuilding() {
+    public boolean getIsOfficeBuilding() {
 
         return isOfficeBuilding;
     }

@@ -1,26 +1,56 @@
+/* TODO: Make this class a super class by...
+    1. removing attributes that are not common to ALL field types (cost, income, seriesID, owner)
+    2. adding onLand, onReject and processResonse methods
+*
+*
+* */
 public class Field {
-    private String label;
     private int ID;
-    private int cost;
+    private String label;
+    protected int cost;
     private int income;
-    private int seriesID;
-    private Player owner;
 
-    public Field (String label, int ID, int cost, int income, int seriesID, Player owner){
-        this.label = label;
+
+
+    public Field(int ID, String label, int cost, int income){
         this.ID = ID;
+        this.label = label;
         this.cost = cost;
         this.income = income;
-        this.seriesID = seriesID;
-        this.owner = owner;
     }
 
     @Override
     public String toString() {
-        return ID + " : " + label;
+        return ID + ": " + label;
     }
 
-    public void onland(){
-        System.out.println("Du er landet på" + ID + "" + label);
+
+    public String onLand(Player p){
+        String s = p.getName()+ " er landet på " + this;
+
+        return s;
     }
+
+    protected String getLabel(){
+        return this.label;
+    }
+
+    public String processChoice(String choice, Player p) {
+        if(choice.equalsIgnoreCase("J")){
+            return onAccept(p);
+
+        }else{
+            return onReject(p);
+
+        }
+
+    }
+    protected String onAccept(Player p){
+        return "";
+    }
+    protected String onReject(Player p){
+        return "";
+    }
+
+
 }
