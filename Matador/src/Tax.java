@@ -5,18 +5,24 @@ public class Tax extends Field {
 
     }
 
-    public String onLand() {
-
-        return "";
+    @Override
+    public String onLand(Player p) {
+        String s = super.onLand(p);
+        s += "Vil du betale fast beløb(4000kr)? (Ellers trækker vi et beløb der svarer til 10 % af dine aktiver.)";
+        return s;
     }
 
-    private String onAccept() {
-
-        return "";
+    @Override
+    protected String onAccept(Player p) {
+        p.pay(this.cost);
+        return p.getName() + " har nu betalt et fast beløb";
     }
 
-    private String onReject() {
-
-        return "";
+    @Override
+    protected String onReject(Player p) {
+        float calcTax = p.getBalance() * 0.10f;
+        p.pay((int) calcTax);
+        return "Vi har trukket 10 % af dine aktiver.";
     }
+
 }

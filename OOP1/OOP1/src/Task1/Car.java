@@ -24,6 +24,7 @@ public class Car {
 
     // Setter
     public void setDriver(Driver newDriver) {
+
         driver = newDriver;
     }
 
