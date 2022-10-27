@@ -1,22 +1,12 @@
 public interface Car {
-    public String getRegistrationNumber(){
+    String getRegistrationNumber();
 
-    }
+    String getMake();
 
-    public String getMake(){
+    String getModel();
 
-    }
+    int getNumberOfDoors();
 
-    public String getModel(){
-
-    }
-
-    public int getNumberOfDoors(){
-
-    }
-
-    public int getRegistrationFee(){
-
-    }
+    int getRegistrationFee();
 
 }

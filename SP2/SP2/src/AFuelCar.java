@@ -1,16 +1,16 @@
 public abstract class AFuelCar extends ACar{
 
-    int kmPrLitre;
+    protected int kmPrLitre;
 
+    abstract String getFuelType();
 
-
-    public String getFuelType(){
-
+    public AFuelCar(int kmPrLitre, String numberPl, String make, String model, int doors) {
+        super(numberPl, make, model, doors);
     }
 
     public int getKmPrLitre(){
 
+        return kmPrLitre;
     }
 
-    //Override String toString():
 }
